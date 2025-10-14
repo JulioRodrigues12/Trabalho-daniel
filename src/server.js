@@ -1,8 +1,8 @@
 import 'dotenv/config'
 import { app } from "./app.js"
 import cors from '@fastify/cors'
-import { database } from "./database/index.js"
-import { connectMongo } from '../mongo-connect.js'
+import { conexaoMongo } from './services/mongodb/conexao.js'
+import { colecoesParaCriar } from './services/mongodb/seed-colecoes.js'
 
 async function server() {
     app.register(cors, {
@@ -18,7 +18,7 @@ async function server() {
         console.log('HTTP Server is running on PORT:' + process.env.PORT)
     })
 
-    await connectMongo();
+    await conexaoMongo();
 
     // const query = await database('marcas').select();
     // console.log('Query :', query)
