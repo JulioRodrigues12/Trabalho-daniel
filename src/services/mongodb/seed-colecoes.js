@@ -11,5 +11,15 @@ export const colecoesParaCriar = async () => {
         })
     })
 
-    return await criarColecao([marcasSchema])
+    const produtosSchema = ({
+        name: 'produtos',
+        schema: new mongoose.Schema({
+            nome: { type: String, required: true},
+            preco: { type: Number, required: true},
+            estoque: { type: Number, required: true},
+            marca: { type: String, required: true}
+        })
+    })
+
+    return await criarColecao([marcasSchema, produtosSchema])
 }

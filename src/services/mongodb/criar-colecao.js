@@ -19,7 +19,7 @@ export const criarColecao = async (colecoes) => {
        colecoes.map((colecao) => {
         if(arrayColecoesExistentes.includes(colecao.name))
             return colecoesExistentes.push(colecao.name)
-
+        
         colecoesCriadas.push(colecao.name)
         return mongoose.model(colecao.name, colecao.schema)
        })

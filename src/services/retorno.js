@@ -5,8 +5,8 @@ export const retorno = (mensagem, possuiErro) => {
         mensagem.length < 1
     ) return null
 
-    return {
+    return console.log({
         message: mensagem,
         error: possuiErro
-    }
+    })
 }
