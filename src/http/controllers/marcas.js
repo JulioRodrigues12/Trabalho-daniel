@@ -1,5 +1,6 @@
 import { database } from '../../database/index.js'
 
+//get 
 export async function list(req, res){
     try {
         const query = await database('marcas').select();
@@ -18,6 +19,7 @@ export async function list(req, res){
     }
 }
 
+//get by id
 export async function listById(req, res){
     try {
         const { id } = req.params
@@ -44,3 +46,5 @@ export async function listById(req, res){
         })
     }
 }
+
+//post
